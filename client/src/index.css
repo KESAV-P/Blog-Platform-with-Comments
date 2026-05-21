@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-bg-dark text-cream font-sans antialiased selection:bg-amber selection:text-bg-dark;
+    background-color: #0f0f0f;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-cream-light;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #0f0f0f;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #2a2a2a;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3a3a3a;
+  }
+}
+
+/* TipTap Editor Styling */
+.tiptap {
+  @apply outline-none min-h-[300px] font-serif text-lg leading-relaxed text-cream-light py-4 px-2;
+}
+
+.tiptap p {
+  @apply mb-4;
+}
+
+.tiptap h1 {
+  @apply font-display text-3xl font-bold mb-4 mt-6 text-cream-light;
+}
+
+.tiptap h2 {
+  @apply font-display text-2xl font-bold mb-3 mt-5 text-cream-light;
+}
+
+.tiptap h3 {
+  @apply font-display text-xl font-semibold mb-2 mt-4 text-cream-light;
+}
+
+.tiptap ul {
+  @apply list-disc pl-6 mb-4;
+}
+
+.tiptap ol {
+  @apply list-decimal pl-6 mb-4;
+}
+
+.tiptap li {
+  @apply mb-1;
+}
+
+.tiptap blockquote {
+  @apply border-l-4 border-amber pl-4 italic my-4 text-cream-muted;
+}
+
+.tiptap pre {
+  @apply bg-bg-accent font-mono p-4 rounded-md my-4 overflow-x-auto text-sm border border-neutral-800;
+}
+
+.tiptap code {
+  @apply bg-bg-accent font-mono px-1.5 py-0.5 rounded text-sm text-amber border border-neutral-800;
+}
+
+.tiptap pre code {
+  @apply bg-transparent p-0 rounded-none border-none text-cream;
+}
+
+.tiptap a {
+  @apply text-amber hover:underline cursor-pointer;
+}
+
+.tiptap img {
+  @apply max-w-full h-auto rounded-md my-4;
+}
+
+.tiptap hr {
+  @apply border-neutral-800 my-6;
+}
+
+/* Glassmorphism utility classes */
+.glass-panel {
+  @apply bg-[#161616]/80 backdrop-blur-md border border-cream-border/30 shadow-glass;
+}
+
+.glass-card {
+  @apply bg-[#1c1c1c]/40 hover:bg-[#1c1c1c]/60 transition-all duration-300 border border-neutral-800/50 hover:border-neutral-700/60 shadow-md;
+}
+
+/* Custom micro-animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
